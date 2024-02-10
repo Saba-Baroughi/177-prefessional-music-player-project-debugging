@@ -110,6 +110,7 @@ loadSong(songs[songIndex]);
 // Update Progress Bar & Time
 function updateProgressBar(e) {
   if (isPlaying) {
+    console.log(e);
     const duration = e.srcElement.duration;
     const currentTime = e.srcElement.currentTime;
     // Update progress bar width
@@ -137,7 +138,8 @@ function updateProgressBar(e) {
 
 // Set Progress Bar
 function setProgressBar(e) {
-  const width = this.clientWidth;
+  console.log(e);
+  const width = this.clientWidth; // this is css property
   const clickX = e.offsetX;
   const duration = music.duration;
   music.currentTime = (clickX / width) * duration;
